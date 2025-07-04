@@ -75,12 +75,10 @@ shop/
 ## 🔧 데이터베이스 구조
 
 ### 주요 테이블
-- `users`: 사용자 정보 (일반 사용자, 판매자, 관리자)
-- `products`: 상품 정보 (이름, 가격, 수량, 카테고리)
-- `purchases`: 주문 정보 (상태: 대기/승인/거절)
-- `posts`: 커뮤니티 게시글
-- `comments`: 댓글
-- `likes`: 좋아요
+- `usertbl`: 사용자 정보 (일반 사용자, 판매자, 관리자)
+- `products`: 상품 정보 (이름, 가격, 수량, 판매자 정보)
+- `purchases`: 주문 정보 (상태: pending/approved/rejected)
+- `poststbl`: 커뮤니티 게시글
 
 ## 🎨 사용된 기술
 
