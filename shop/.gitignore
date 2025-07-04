@@ -1,0 +1,31 @@
+# API 키 설정 파일 (GitHub에 업로드하지 않음)
+config.php
+
+# 환경 설정 파일
+.env
+
+# 로그 파일
+*.log
+
+# 임시 파일
+*.tmp
+*.temp
+
+# IDE 설정 파일
+.vscode/
+.idea/
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+
+# 업로드된 파일들 (선택적)
+uploads/products/*
+!uploads/products/.gitkeep
+
+# 데이터베이스 백업 파일 (database_setup.sql은 제외)
+*.db
+*.sqlite
+*.sqlite3
+dump_*.sql
+backup_*.sql 
