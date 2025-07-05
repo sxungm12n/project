@@ -1,0 +1,38 @@
+name: VitaView
+description: "VitaView - 건강한 삶을 위한 영양 관리 앱"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^0.8.4+8
+  get: ^4.6.5
+  http: ^0.13.5 
+  path: ^1.8.0
+  async: ^2.8.1
+  intl: ^0.17.0
+  fluttertoast: ^8.0.9
+  shared_preferences: ^2.0.15
+  excel: ^2.0.3
+  path_provider: ^2.0.8
+  file_picker: ^10.2.0
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^1.0.0 # 올바른 위치로 이동
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - images/
+    - lib/python/uploads/
+    - data/
+    - lib/vita/
