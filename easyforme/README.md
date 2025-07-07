@@ -52,7 +52,7 @@
 ### Backend (Python Flask)
 - **Flask**: 웹 API 서버
 - **SQLAlchemy**: ORM 및 데이터베이스 관리
-- **MySQL**: 관계형 데이터베이스
+- **Azure의 MySQL**: 관계형 데이터베이스
 - **Azure OpenAI**: GPT-4o 기반 AI 챗봇
 - **Azure AI Search**: RAG(Retrieval-Augmented Generation)
 - **Azure Blob Storage**: 파일 저장소
