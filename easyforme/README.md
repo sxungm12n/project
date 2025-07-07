@@ -230,13 +230,173 @@ seongmin/
 
 ## 🗄️ 데이터베이스 구조
 
-### 주요 테이블
-- **User**: 사용자 기본 정보
-- **Passport**: 여권 정보 (OCR 추출)
-- **ResidenceCard**: 외국인등록증 정보 (OCR 추출)
-- **Visa**: 비자 정보 및 연장 관리
-- **Application**: 신청서 정보
-- **ApplicationFile**: 업로드된 파일 정보
+### 데이터베이스 개요
+- **데이터베이스**: MySQL 8.0
+- **ORM**: SQLAlchemy 2.0.41
+- **연결**: Azure Database for MySQL
+- **문자셋**: utf8mb4 (한글 지원)
+
+### 테이블 관계도
+```
+User (1) ←→ (1) Passport
+User (1) ←→ (1) ResidenceCard  
+User (1) ←→ (1) Visa
+User (1) ←→ (N) Application
+Application (1) ←→ (N) ApplicationFile
+```
+
+### 테이블 상세 구조
+
+#### 1. User 테이블 (사용자 기본 정보)
+```sql
+CREATE TABLE user (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    birth_date DATE NOT NULL,
+    email VARCHAR(120) UNIQUE NOT NULL,
+    username VARCHAR(80) UNIQUE NOT NULL,
+    password VARCHAR(200) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
+- **용도**: 사용자 계정 및 기본 정보 관리
+- **특징**: 이메일, 사용자명 중복 방지
+
+#### 2. Passport 테이블 (여권 정보)
+```sql
+CREATE TABLE passport (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    surname VARCHAR(100),
+    givenname VARCHAR(100),
+    passport_number VARCHAR(20),
+    nationality VARCHAR(100),
+    sex VARCHAR(1),
+    country_code VARCHAR(3),
+    issue_date DATE,
+    expiry_date DATE,
+    is_verified BOOLEAN DEFAULT FALSE,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
+```
+- **용도**: Azure OCR로 자동 추출된 여권 정보 저장
+- **특징**: 1:1 관계 (User-Passport)
+
+#### 3. ResidenceCard 테이블 (외국인등록증 정보)
+```sql
+CREATE TABLE residence_card (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    name_kor VARCHAR(100),
+    resident_id VARCHAR(20),
+    visa_type VARCHAR(100),
+    issue_date DATE,
+    is_verified BOOLEAN DEFAULT FALSE,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
+```
+- **용도**: Azure OCR로 자동 추출된 외국인등록증 정보 저장
+- **특징**: 1:1 관계 (User-ResidenceCard)
+
+#### 4. Visa 테이블 (비자 정보)
+```sql
+CREATE TABLE visa (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    visa_type VARCHAR(10) NOT NULL,  -- E-8 or E-9
+    entry_date DATE NOT NULL,
+    expiry_date DATE NOT NULL,
+    extension_start DATE,
+    extension_end DATE,
+    extension_count INT DEFAULT 0,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
+```
+- **용도**: E-8/E-9 비자 정보 및 연장 관리
+- **특징**: 자동 만료일 계산, 연장 횟수 추적
+
+#### 5. Application 테이블 (신청서 정보)
+```sql
+CREATE TABLE application (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    type VARCHAR(50) NOT NULL,  -- e8Registration, e9Extension 등
+    status VARCHAR(20) NOT NULL DEFAULT 'pending',  -- pending, approved, rejected
+    submitted_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    notes TEXT,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
+```
+- **용도**: 신청서 정보 및 상태 관리
+- **신청 유형**: E-8/E-9 등록, 연장, 근무처 변경
+- **상태**: pending → processing → approved/rejected
+
+#### 6. ApplicationFile 테이블 (업로드된 파일 정보)
+```sql
+CREATE TABLE application_file (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    application_id INT NOT NULL,
+    doc_id VARCHAR(50) NOT NULL,  -- application_form, passport 등
+    file_name VARCHAR(255) NOT NULL,
+    file_url VARCHAR(500) NOT NULL,
+    uploaded_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (application_id) REFERENCES application(id) ON DELETE CASCADE
+);
+```
+- **용도**: Azure Blob Storage에 업로드된 파일 정보 관리
+- **특징**: CASCADE 삭제, 문서 유형별 분류
+
+### 데이터베이스 특징
+
+#### 1. 관리자 계정
+- **관리자 ID**: 10000101 (고정)
+- **관리자 계정**: ms7team/ms7team
+- **권한**: 신청서 승인/거절, 파일 관리
+
+#### 2. OCR 연동
+- **Azure OCR API** 활용
+- **자동 정보 추출**: 여권, 외국인등록증
+- **검증 플래그**: is_verified 필드로 수동 검증 가능
+
+#### 3. 파일 관리
+- **Azure Blob Storage** 연동
+- **고유 파일명**: UUID 기반 중복 방지
+- **문서 유형별 분류**: doc_id로 체계적 관리
+
+#### 4. 비자 연장 시스템
+- **자동 계산**: 입국일 기준 체류기간 계산
+- **연장 추적**: extension_count로 연장 횟수 관리
+- **만료일 관리**: 자동 만료일 업데이트
+
+#### 5. 신청서 워크플로우
+```
+신청서 작성 → 파일 업로드 → 제출 → 관리자 검토 → 승인/거절
+```
+
+### 인덱스 및 성능 최적화
+```sql
+-- 사용자 조회 최적화
+CREATE INDEX idx_user_email ON user(email);
+CREATE INDEX idx_user_username ON user(username);
+
+-- 신청서 조회 최적화
+CREATE INDEX idx_application_user_status ON application(user_id, status);
+CREATE INDEX idx_application_submitted ON application(submitted_at);
+
+-- 파일 조회 최적화
+CREATE INDEX idx_application_file_app ON application_file(application_id);
+CREATE INDEX idx_application_file_doc ON application_file(doc_id);
+```
+
+### 데이터 백업 및 복구
+- **자동 백업**: Azure Database for MySQL 자동 백업
+- **백업 주기**: 일 1회 (7일 보관)
+- **복구**: Point-in-time 복구 지원
 
 ## 📚 데이터 수집 및 전처리
 
