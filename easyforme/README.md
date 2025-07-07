@@ -608,10 +608,9 @@ npx expo start
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
----
-
 ## 시연 영상  
 [https://youtu.be/5AR6a0Vupv4](https://youtu.be/5AR6a0Vupv4)
+---
 
 **Made with ❤️ for foreign workers in Korea**
 
