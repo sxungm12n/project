@@ -610,6 +610,9 @@ npx expo start
 
 ---
 
+## 시연 영상  
+[https://youtu.be/5AR6a0Vupv4](https://youtu.be/5AR6a0Vupv4)
+
 **Made with ❤️ for foreign workers in Korea**
 
 **세뇨린따의 미눠니 팀 (7팀)** 
