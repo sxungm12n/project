@@ -20,7 +20,6 @@
 
 <div align="center">
 
-![EasyFormy Banner](https://via.placeholder.com/800x200/4A90E2/FFFFFF?text=EasyFormy+-+AI+민원+서비스)
 
 *외국인 근로자의 디지털 민원 처리를 위한 혁신적인 AI 솔루션*
 
