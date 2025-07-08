@@ -108,9 +108,9 @@
 <div align="center">
 
 ### 🏗️ **아키텍처 구성**
-
-</div>
 ![시스템 아키텍처](./architecture.jpg)
+</div>
+
 
 ```mermaid
 graph TB
