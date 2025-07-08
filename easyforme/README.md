@@ -43,28 +43,21 @@
 
 ## 🛠 기술 스택
 
-### Frontend (React Native)
-- **React Native**: 크로스 플랫폼 모바일 앱
-- **Expo**: 개발 환경 및 배포 플랫폼
-- **Azure Translator**: 실시간 다국어 번역
-- **Azure Speech Service**: 음성 인식/합성
+| 분야               | 사용 기술 및 설명 |
+|--------------------|------------------|
+| **프론트엔드**       | React Native (Expo) – 크로스 플랫폼 모바일 앱 개발 |
+| **백엔드**           | Python, Flask – RESTful API 서버<br>SQLAlchemy – ORM<br>Gunicorn – 프로덕션 WSGI 서버 |
+| **데이터베이스**     | Azure MySQL – 클라우드 기반 관계형 데이터베이스 |
+| **AI / 대화 관리**   | Azure OpenAI (GPT-4o) – AI 챗봇<br>LangChain – 대화 흐름 관리<br>ConversationalRetrievalChain – 4단계 추론 프롬프팅<br>Azure AI Search – RAG (Retrieval-Augmented Generation) |
+| **음성 / 번역**      | Azure Translator API – 실시간 다국어 번역<br>Azure Speech Service – 음성 인식 및 합성 |
+| **문서 처리**        | Azure OCR – 문서 정보 자동 추출<br>PyPDF2, ReportLab – PDF 생성 및 처리 |
+| **파일 저장소**      | Azure Blob Storage – 이미지 및 문서 저장 |
+| **인증 / 보안**      | JWT (JSON Web Token) – 사용자 인증 및 세션 관리 |
+| **클라우드 / 배포**  | Azure App Service – 앱 배포<br>Azure Cloud – 전체 인프라 구성<br>Docker *(선택사항)* – 컨테이너 기반 운영 |
+| **DevOps / 협업**    | GitHub – 버전 관리 및 CI/CD 파이프라인 |
 
-### Backend (Python Flask)
-- **Flask**: 웹 API 서버
-- **SQLAlchemy**: ORM 및 데이터베이스 관리
-- **Azure의 MySQL**: 관계형 데이터베이스
-- **Azure OpenAI**: GPT-4o 기반 AI 챗봇
-- **Azure AI Search**: RAG(Retrieval-Augmented Generation)
-- **Azure Blob Storage**: 파일 저장소
-- **Azure OCR**: 문서 정보 자동 추출
-- **Langchain**: 대화 흐름 관리 및 품질 향상
-- **ConversationalRetrievalChain**: 4단계 추론 프롬프팅 구현
-
-### DevOps & Cloud
-- **Azure Cloud**: 클라우드 인프라
-- **GitHub**: 버전 관리 및 CI/CD
-- **Docker**: 컨테이너화 (선택사항)
-- **Gunicorn**: 프로덕션 서버 실행
+## 📐 시스템 아키텍처
+![시스템 아키텍처](./architecture.jpg)
 
 ## 🚀 배포 가이드
 
