@@ -108,7 +108,7 @@
 <div align="center">
 
 ### 🏗️ **아키텍처 구성**
-![시스템 아키텍처](./architecture.jpg)
+
 </div>
 
 
@@ -150,7 +150,7 @@ graph TB
 | **🔄 DevOps / 협업** | ![GitHub](https://img.shields.io/badge/GitHub-CI/CD-181717?logo=github) | 버전 관리 및 파이프라인 |
 
 ## 📐 시스템 아키텍처
-
+![시스템 아키텍처](./architecture.jpg)
 <div align="center">
 
 ### 🏛️ **전체 시스템 구조**
