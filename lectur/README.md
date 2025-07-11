@@ -10,7 +10,6 @@
 ![Status](https://img.shields.io/badge/Status-Production-brightgreen.svg)
 
 **🤖 AI 기반 스마트 티칭 어시스턴트**  
-**👥 10팀: 10선비**  
 **📅 프로젝트 기간: 2025년 4월 2일 ~ 4월 18일**
 
 > **따뜻하고 친근한 AI 선생님이 과학을 재미있게 가르쳐주는 웹 서비스입니다!** 🌟
