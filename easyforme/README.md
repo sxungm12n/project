@@ -12,10 +12,7 @@
 
 **📅 프로젝트 기간: 2025년 5월 8일 ~ 6월 13일**
 
-> **외국인 비전문·계절근로자를 위한 AI 기반 종합 민원 서비스 애플리케이션**
-
-> 
-[📱 주요 기능](#-주요-기능) • [🛠 기술 스택](#-기술-스택) • [🚀 배포 가이드](#-배포-가이드) • [📊 API 문서](#-api-엔드포인트)
+> **외국인 체류 및 근로 민원 위한 AI 기반 종합 민원 서비스 애플리케이션**
 
 </div>
 
@@ -110,10 +107,24 @@
 
 <div align="center">
 
-### 🏗️ **아키텍처 구성**
+### 📊 **기술 스택 상세**
+
+| 🎯 **분야** | 🛠️ **사용 기술** | 📝 **설명** |
+|-------------|------------------|-------------|
+| **📱 프론트엔드** | ![React Native](https://img.shields.io/badge/React%20Native-0.79.3-61DAFB?logo=react) | 크로스 플랫폼 모바일 앱 개발 |
+| **🌐 백엔드** | ![Flask](https://img.shields.io/badge/Flask-3.1.1-000000?logo=flask) ![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python) | RESTful API 서버, ORM, WSGI |
+| **🗄️ 데이터베이스** | ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql) | Azure 클라우드 기반 관계형 DB |
+| **🤖 AI / 대화 관리** | ![Azure OpenAI](https://img.shields.io/badge/Azure%20OpenAI-GPT--4o-0078D4?logo=microsoft) ![LangChain](https://img.shields.io/badge/LangChain-0.3.25-00FF00) | AI 챗봇, 4단계 추론 프롬프팅, RAG |
+| **🌍 음성 / 번역** | ![Azure Translator](https://img.shields.io/badge/Azure%20Translator-API-0078D4?logo=microsoft) ![Azure Speech](https://img.shields.io/badge/Azure%20Speech-Service-0078D4?logo=microsoft) | 실시간 다국어 번역, 음성 인식/합성 |
+| **📷 문서 처리** | ![Azure OCR](https://img.shields.io/badge/Azure%20OCR-API-0078D4?logo=microsoft) ![PyPDF2](https://img.shields.io/badge/PyPDF2-3.0.1-FF0000) | 문서 정보 자동 추출, PDF 생성 |
+| **☁️ 파일 저장소** | ![Azure Blob](https://img.shields.io/badge/Azure%20Blob-Storage-0078D4?logo=microsoft) | 이미지 및 문서 저장 |
+| **🔐 인증 / 보안** | ![JWT](https://img.shields.io/badge/JWT-Token-000000?logo=jsonwebtokens) | 사용자 인증 및 세션 관리 |
+| **🚀 클라우드 / 배포** | ![Azure](https://img.shields.io/badge/Azure-App%20Service-0078D4?logo=microsoft) ![Docker](https://img.shields.io/badge/Docker-Container-2496ED?logo=docker) | 앱 배포, 전체 인프라 구성 |
+| **🔄 DevOps / 협업** | ![GitHub](https://img.shields.io/badge/GitHub-CI/CD-181717?logo=github) | 버전 관리 및 파이프라인 |
 
 </div>
 
+### 🏗️ **아키텍처 구성**
 
 ```mermaid
 graph TB
@@ -137,20 +148,7 @@ graph TB
     style I fill:#5f27cd
 ```
 
-### 📊 **기술 스택 상세**
 
-| 🎯 **분야** | 🛠️ **사용 기술** | 📝 **설명** |
-|-------------|------------------|-------------|
-| **📱 프론트엔드** | ![React Native](https://img.shields.io/badge/React%20Native-0.79.3-61DAFB?logo=react) | 크로스 플랫폼 모바일 앱 개발 |
-| **🌐 백엔드** | ![Flask](https://img.shields.io/badge/Flask-3.1.1-000000?logo=flask) ![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python) | RESTful API 서버, ORM, WSGI |
-| **🗄️ 데이터베이스** | ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql) | Azure 클라우드 기반 관계형 DB |
-| **🤖 AI / 대화 관리** | ![Azure OpenAI](https://img.shields.io/badge/Azure%20OpenAI-GPT--4o-0078D4?logo=microsoft) ![LangChain](https://img.shields.io/badge/LangChain-0.3.25-00FF00) | AI 챗봇, 4단계 추론 프롬프팅, RAG |
-| **🌍 음성 / 번역** | ![Azure Translator](https://img.shields.io/badge/Azure%20Translator-API-0078D4?logo=microsoft) ![Azure Speech](https://img.shields.io/badge/Azure%20Speech-Service-0078D4?logo=microsoft) | 실시간 다국어 번역, 음성 인식/합성 |
-| **📷 문서 처리** | ![Azure OCR](https://img.shields.io/badge/Azure%20OCR-API-0078D4?logo=microsoft) ![PyPDF2](https://img.shields.io/badge/PyPDF2-3.0.1-FF0000) | 문서 정보 자동 추출, PDF 생성 |
-| **☁️ 파일 저장소** | ![Azure Blob](https://img.shields.io/badge/Azure%20Blob-Storage-0078D4?logo=microsoft) | 이미지 및 문서 저장 |
-| **🔐 인증 / 보안** | ![JWT](https://img.shields.io/badge/JWT-Token-000000?logo=jsonwebtokens) | 사용자 인증 및 세션 관리 |
-| **🚀 클라우드 / 배포** | ![Azure](https://img.shields.io/badge/Azure-App%20Service-0078D4?logo=microsoft) ![Docker](https://img.shields.io/badge/Docker-Container-2496ED?logo=docker) | 앱 배포, 전체 인프라 구성 |
-| **🔄 DevOps / 협업** | ![GitHub](https://img.shields.io/badge/GitHub-CI/CD-181717?logo=github) | 버전 관리 및 파이프라인 |
 
 ## 📐 시스템 아키텍처
 ![시스템 아키텍처](./architecture.jpg)
@@ -1183,50 +1181,6 @@ npx expo start
 | **📄 민감 문서** | Azure Blob Storage 암호화 저장 | 최고 수준 |
 | **🔑 API 키** | 환경변수 및 Azure Key Vault 관리 | 최고 수준 |
 | **📊 사용 데이터** | 익명화 처리 및 통계 목적만 활용 | 최고 수준 |
-
-</details>
-
-## 📞 지원
-
-<div align="center">
-
-### 🆘 **지원 및 문의**
-
-</div>
-
-<details>
-<summary><b>🐛 이슈 리포트</b></summary>
-
-| 이슈 유형 | 보고 방법 | 응답 시간 |
-|-----------|-----------|-----------|
-| **🐛 버그 리포트** | [GitHub Issues](https://github.com/your-repo/issues) | 24시간 이내 |
-| **💡 기능 제안** | [GitHub Discussions](https://github.com/your-repo/discussions) | 48시간 이내 |
-| **📚 문서 개선** | Pull Request 또는 Issue 생성 | 72시간 이내 |
-| **🔒 보안 취약점** | Private Issue 또는 이메일 | 즉시 |
-
-</details>
-
-<details>
-<summary><b>📚 문서 및 가이드</b></summary>
-
-| 문서 유형 | 링크 | 설명 |
-|-----------|------|------|
-| **📖 사용자 가이드** | [User Guide](./docs/user-guide.md) | 앱 사용 방법 상세 가이드 |
-| **🔧 개발자 문서** | [Developer Guide](./docs/developer-guide.md) | API 및 개발 가이드 |
-| **🚀 배포 가이드** | [Deployment Guide](./docs/deployment.md) | 서버 배포 및 설정 가이드 |
-| **🔒 보안 가이드** | [Security Guide](./docs/security.md) | 보안 설정 및 모범 사례 |
-
-</details>
-
-<details>
-<summary><b>👥 커뮤니티</b></summary>
-
-| 커뮤니티 | 링크 | 활동 |
-|----------|------|------|
-| **💬 개발자 포럼** | [Discord](https://discord.gg/your-server) | 실시간 개발자 커뮤니티 |
-| **📧 이메일 지원** | support@easyforme.com | 공식 이메일 지원 |
-| **📱 카카오톡** | @EasyFormy | 카카오톡 채널 |
-| **🌐 공식 웹사이트** | [www.easyforme.com](https://www.easyforme.com) | 공식 웹사이트 |
 
 </details>
 
