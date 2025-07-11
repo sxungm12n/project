@@ -1202,55 +1202,7 @@ npx expo start
 - ✅ **개인 및 상업적 사용**: 개인 및 기업에서 자유롭게 사용 가능
 - ✅ **책임 면제**: 원저작자는 어떠한 책임도 지지 않음
 
-## 🤝 기여
 
-<div align="center">
-
-### 👥 **프로젝트 기여 방법**
-
-</div>
-
-<details>
-<summary><b>🔧 개발 기여</b></summary>
-
-#### **기여 프로세스**
-1. **🍴 Fork the Project** - 프로젝트를 포크합니다
-2. **🌿 Create your Feature Branch** - `git checkout -b feature/AmazingFeature`
-3. **💾 Commit your Changes** - `git commit -m 'Add some AmazingFeature'`
-4. **📤 Push to the Branch** - `git push origin feature/AmazingFeature`
-5. **🔀 Open a Pull Request** - Pull Request를 생성합니다
-
-#### **기여 가이드라인**
-- 📝 **코드 스타일**: PEP 8 (Python), ESLint (JavaScript) 준수
-- 🧪 **테스트**: 새로운 기능에 대한 테스트 코드 작성
-- 📚 **문서**: README 및 API 문서 업데이트
-- 🔒 **보안**: 보안 취약점 발견 시 즉시 보고
-
-</details>
-
-<details>
-<summary><b>📝 문서 기여</b></summary>
-
-| 기여 유형 | 방법 | 보상 |
-|-----------|------|------|
-| **📖 사용자 가이드** | 마크다운 문서 작성 | 기여자 명단 등재 |
-| **🌍 번역** | 다국어 번역 제공 | 번역자 크레딧 |
-| **📊 튜토리얼** | 비디오 튜토리얼 제작 | 공식 채널 게시 |
-| **🐛 버그 리포트** | 상세한 버그 리포트 | 빠른 수정 보장 |
-
-</details>
-
-<details>
-<summary><b>💡 아이디어 제안</b></summary>
-
-| 제안 유형 | 채널 | 처리 과정 |
-|-----------|------|-----------|
-| **🚀 기능 제안** | GitHub Discussions | 커뮤니티 투표 → 개발 계획 |
-| **🎨 UI/UX 개선** | GitHub Issues | 디자인 리뷰 → 구현 |
-| **🔧 기술 개선** | GitHub Discussions | 기술 검토 → 적용 |
-| **📊 성능 최적화** | GitHub Issues | 성능 분석 → 개선 |
-
-</details>
 
 ## 🎬 시연 영상
 
@@ -1275,10 +1227,6 @@ npx expo start
 **Made with ❤️ for foreign workers in Korea**
 
 **세뇨린따의 미눠니 팀 (7팀)**
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-repo)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/5AR6a0Vupv4)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:support@easyforme.com)
 
 ---
 
