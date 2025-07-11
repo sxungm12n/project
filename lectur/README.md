@@ -924,7 +924,7 @@ def monitor_bias():
 
 ### 🎤 최종 발표 영상
 
-[![lectur Demo](https://img.youtube.com/vi/3d1YKTy72uoI/0.jpg)](https://youtu.be/3d1YKTy72uo)
+[![lectur Demo](https://img.youtube.com/vi/3d1YKTy72uo/0.jpg)](https://youtu.be/3d1YKTy72uo)
 
 **프로젝트 완성도**
 - 전체 시스템 동작
