@@ -10,6 +10,7 @@
 ![Status](https://img.shields.io/badge/Status-Production-brightgreen.svg)
 
 **🤖 AI 기반 스마트 티칭 어시스턴트**  
+**👥 10팀: 10선비**  
 **📅 프로젝트 기간: 2025년 4월 2일 ~ 4월 18일**
 
 > **따뜻하고 친근한 AI 선생님이 과학을 재미있게 가르쳐주는 웹 서비스입니다!** 🌟
@@ -370,103 +371,61 @@ lectur/
 
 ---
 
-## 🗄️ 데이터베이스 구조
+## 🗄️ 데이터 구조
 
-### 📊 ERD 다이어그램
+### 📊 세션 기반 데이터 관리
 
 ```mermaid
-erDiagram
-    USERS {
-        string user_id PK
-        string username
-        string email
-        datetime created_at
-        datetime last_login
-    }
+graph TD
+    A[사용자 세션] --> B[Flask-Session]
+    B --> C[세션 데이터 저장]
+    C --> D[lecture_summary]
+    C --> E[chat_history]
+    C --> F[uploaded_files]
     
-    SESSIONS {
-        string session_id PK
-        string user_id FK
-        string lecture_summary
-        datetime created_at
-        datetime expires_at
-    }
+    D --> G[강의 요약 정보]
+    E --> H[대화 기록]
+    F --> I[업로드된 파일 정보]
     
-    UPLOADS {
-        string file_id PK
-        string user_id FK
-        string filename
-        string file_type
-        string file_path
-        datetime uploaded_at
-        string status
-    }
-    
-    CHAT_HISTORY {
-        string chat_id PK
-        string user_id FK
-        string question
-        string answer
-        datetime created_at
-        string context
-    }
-    
-    USERS ||--o{ SESSIONS : "has"
-    USERS ||--o{ UPLOADS : "uploads"
-    USERS ||--o{ CHAT_HISTORY : "chats"
+    G --> J[7일 후 자동 만료]
+    H --> J
+    I --> J
 ```
 
-### 📋 테이블 상세 설명
+### 📋 데이터 구조 설명
 
-| 테이블 | 설명 | 주요 필드 |
-|--------|------|-----------|
-| **USERS** | 사용자 정보 | user_id, username, email |
-| **SESSIONS** | 세션 관리 | session_id, lecture_summary |
-| **UPLOADS** | 파일 업로드 | file_id, filename, status |
-| **CHAT_HISTORY** | 대화 기록 | chat_id, question, answer |
+| 데이터 유형 | 저장 방식 | 설명 |
+|-------------|-----------|------|
+| **세션 데이터** | Flask-Session | 사용자별 세션 정보 |
+| **강의 요약** | 세션 내 저장 | 업로드된 강의 내용 요약 |
+| **대화 기록** | 세션 내 저장 | 챗봇과의 대화 내용 |
+| **파일 정보** | 로컬 파일 시스템 | 업로드된 파일 메타데이터 |
 
-### 🗃️ SQL 스키마
+### 💾 파일 시스템 구조
 
-```sql
--- 사용자 테이블
-CREATE TABLE users (
-    user_id VARCHAR(50) PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
-    email VARCHAR(255) UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    last_login TIMESTAMP
-);
-
--- 세션 테이블
-CREATE TABLE sessions (
-    session_id VARCHAR(100) PRIMARY KEY,
-    user_id VARCHAR(50) REFERENCES users(user_id),
-    lecture_summary TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    expires_at TIMESTAMP
-);
-
--- 업로드 테이블
-CREATE TABLE uploads (
-    file_id VARCHAR(100) PRIMARY KEY,
-    user_id VARCHAR(50) REFERENCES users(user_id),
-    filename VARCHAR(255) NOT NULL,
-    file_type VARCHAR(50),
-    file_path VARCHAR(500),
-    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status VARCHAR(50) DEFAULT 'pending'
-);
-
--- 채팅 기록 테이블
-CREATE TABLE chat_history (
-    chat_id VARCHAR(100) PRIMARY KEY,
-    user_id VARCHAR(50) REFERENCES users(user_id),
-    question TEXT NOT NULL,
-    answer TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    context TEXT
-);
 ```
+lectur/
+├── 📁 uploads/              # 업로드된 파일 저장
+│   ├── 📄 user1_file1.wav
+│   ├── 📄 user1_file2.pdf
+│   └── 📄 user2_file1.docx
+├── 📁 output/               # 생성된 파일 저장
+│   ├── 🔊 tts_audio.wav
+│   ├── 🎨 generated_image.png
+│   └── 📝 summary.txt
+└── 📁 flask_session/        # Flask 세션 파일
+    └── 📄 session_data
+```
+
+### 🔄 데이터 흐름
+
+| 단계 | 데이터 처리 | 저장 위치 |
+|------|-------------|-----------|
+| **1. 파일 업로드** | 파일 검증 및 저장 | `uploads/` 디렉토리 |
+| **2. 세션 생성** | 사용자 세션 생성 | Flask-Session |
+| **3. 데이터 처리** | 파일 분석 및 요약 | 세션 내 저장 |
+| **4. 대화 기록** | 챗봇 대화 저장 | 세션 내 저장 |
+| **5. 세션 만료** | 7일 후 자동 삭제 | 세션 데이터 정리 |
 
 --- 
 
@@ -1065,6 +1024,14 @@ SOFTWARE.
 [![GitHub](https://img.shields.io/badge/GitHub-10선비-black?style=for-the-badge&logo=github)](https://github.com/10선비)
 [![YouTube](https://img.shields.io/badge/YouTube-과학쌤-red?style=for-the-badge&logo=youtube)](https://youtube.com/과학쌤)
 [![Discord](https://img.shields.io/badge/Discord-커뮤니티-blue?style=for-the-badge&logo=discord)](https://discord.gg/과학쌤)
+
+### 📞 연락처
+
+| 연락 방법 | 정보 |
+|-----------|------|
+| **이메일** | science.teacher@example.com |
+| **전화** | 02-1234-5678 |
+| **주소** | 서울특별시 강남구 테헤란로 123 |
 
 ---
 
