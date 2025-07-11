@@ -10,8 +10,10 @@
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-orange.svg)](https://www.mysql.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **외국인 비전문·계절근로자를 위한 AI 기반 종합 민원 서비스 애플리케이션**
 **📅 프로젝트 기간: 2025년 5월 8일 ~ 6월 13일**
+
+> **외국인 비전문·계절근로자를 위한 AI 기반 종합 민원 서비스 애플리케이션**
+
 > 
 [📱 주요 기능](#-주요-기능) • [🛠 기술 스택](#-기술-스택) • [🚀 배포 가이드](#-배포-가이드) • [📊 API 문서](#-api-엔드포인트)
 
