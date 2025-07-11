@@ -1,6 +1,8 @@
-# 🔬 과학쌤 - AI 기반 과학 교육 챗봇
-
 <div align="center">
+    
+# 🔬 과학쌤  
+
+### AI 기반 스마트 티칭 어시스턴트
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)
@@ -9,45 +11,27 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Status](https://img.shields.io/badge/Status-Production-brightgreen.svg)
 
-**🤖 AI 기반 스마트 티칭 어시스턴트**  
-**👥 10팀: 10선비**  
 **📅 프로젝트 기간: 2025년 4월 2일 ~ 4월 18일**
 
 > **따뜻하고 친근한 AI 선생님이 과학을 재미있게 가르쳐주는 웹 서비스입니다!** 🌟
-
-[🚀 시작하기](#-배포-가이드) • [📖 사용법](#-주요-기능) • [🛠️ 기술스택](#-기술-스택) • [📊 API문서](#-api-문서)
 
 </div>
 
 ---
 
-## 📋 목차
+<div align="center">
 
-- [📊 프로젝트 배경](#-프로젝트-배경)
-- [📱 주요 기능](#-주요-기능)
-- [🛠️ 기술 스택](#-기술-스택)
-- [📐 시스템 아키텍처](#-시스템-아키텍처)
-- [🚀 배포 가이드](#-배포-가이드)
-- [📁 프로젝트 구조](#-프로젝트-구조)
-- [🗄️ 데이터베이스 구조](#-데이터베이스-구조)
-- [🤖 AI/데이터 섹션](#-aidata-섹션)
-- [💻 개발 환경](#-개발-환경)
-- [📊 API 문서](#-api-문서)
-- [🔒 보안 고려사항](#-보안-고려사항)
-- [🛠️ 문제 해결](#-문제-해결)
-- [🎯 기대 효과](#-기대-효과)
-- [🤖 책임 있는 AI](#-책임-있는-ai)
-- [📞 지원](#-지원)
-- [📄 라이선스](#-라이선스)
-- [🤝 기여](#-기여)
-- [🎬 시연 영상](#-시연-영상)
-- [🏆 푸터](#-푸터)
+*과학쌤 역할을 대신 하여 수업 강의,자료의 내용에 대한 도움을 주는 AI 솔루션*
 
----
+</div>
 
 ## 📊 프로젝트 배경
 
+<div align="center">
+    
 ### 🎯 문제 상황
+
+</div>
 
 | 문제 유형 | 현황 | 심각성 |
 |-----------|------|--------|
@@ -56,7 +40,11 @@
 | **개인 맞춤 교육 부재** | 1:1 맞춤 교육 접근성 15% | 🔴 높음 |
 | **과학적 호기심 감소** | 중학생 과학 흥미도 45% (전년 대비 -12%) | 🟡 중간 |
 
+<div align="center">
+    
 ### 👥 타겟 사용자
+
+</div>
 
 | 사용자 그룹 | 특징 | 주요 니즈 |
 |-------------|------|-----------|
@@ -64,14 +52,16 @@
 | **교사** | 과학 교육 담당자 | 보조 도구, 개별 지도 |
 | **학부모** | 자녀 교육 관심자 | 학습 진도 확인, 지원 |
 
+<div align="center">
+    
 ### 🎯 해결하고자 하는 문제
+
+</div>
 
 - **개념 이해 부족**: 암기 중심에서 이해 중심으로 전환
 - **개인화 부족**: 일괄 교육에서 개별 맞춤 교육으로 전환
 - **흥미 감소**: 딱딱한 교육에서 재미있는 상호작용으로 전환
 - **접근성 부족**: 시간/공간 제약 없는 24/7 학습 환경 제공
-
----
 
 ## 📱 주요 기능
 
@@ -111,11 +101,11 @@
 
 </details>
 
----
-
 ## 🛠️ 기술 스택
 
 <div align="center">
+
+### 📊 **기술 스택 상세**
 
 | 분야 | 기술 | 버전 | 설명 |
 |------|------|------|------|
@@ -130,7 +120,7 @@
 
 </div>
 
-### 🏗️ 기술 아키텍처
+### 🏗️ **아키텍처 구성**
 
 ```mermaid
 graph TB
@@ -163,7 +153,9 @@ graph TB
 ---
 
 ## 📐 시스템 아키텍처
-
+![시스템 아키텍처](./그림1.jpg)
+<div align="center">
+    
 ### 🔄 전체 시스템 흐름
 
 ```mermaid
@@ -202,6 +194,12 @@ graph LR
     I --> S
     K --> Q
 ```
+
+<div align="center">
+
+*🔗 **모든 서비스가 Azure 클라우드에서 통합되어 안정적이고 확장 가능한 인프라를 제공합니다***
+
+</div>
 
 ### 🏗️ 레이어별 상세 구조
 
@@ -301,10 +299,10 @@ DALLE_KEY=your_dalle_key
 python app.py
 ```
 
-서버가 `http://127.0.0.1:5500`에서 실행됩니다.
+서버가 `http://YOUR_SERVER:5500`에서 실행됩니다.
 
 ### 실행 확인
-- ✅ 서버가 정상적으로 실행되면 터미널에 "Running on http://127.0.0.1:5500" 메시지가 표시됩니다
+- ✅ 서버가 정상적으로 실행되면 터미널에 "Running on http://YOUR_SERVER:5500" 메시지가 표시됩니다
 - 🌐 브라우저에서 해당 주소로 접속하면 과학쌤 웹 인터페이스를 사용할 수 있습니다
 - ⏹️ 서버를 중지하려면 터미널에서 `Ctrl+C`를 누르세요
 
@@ -331,11 +329,13 @@ az webapp up --name science-teacher --resource-group myResourceGroup --runtime "
 
 </details>
 
---- 
-
----
-
 ## 📁 프로젝트 구조
+
+<div align="center">
+
+### 📂 **파일 및 디렉토리 구조**
+
+</div>
 
 ```
 lectur/
@@ -373,7 +373,11 @@ lectur/
 
 ## 🗄️ 데이터 구조
 
+<div align="center">
+
 ### 📊 세션 기반 데이터 관리
+
+</div>
 
 ```mermaid
 graph TD
@@ -437,7 +441,7 @@ lectur/
 
 | 단계 | 설명 | 기술 | 결과물 |
 |------|------|------|--------|
-| **📖 OCR 처리** | 교과서 이미지 → 텍스트 | Azure Document Intelligence | JSON 형태 데이터 |
+| **📖 OCR 처리** | 비상 교육 과학 교과서 이미지 → 텍스트 | Azure Document Intelligence | JSON 형태 데이터 |
 | **🎤 음성 변환** | 오디오 파일 → 텍스트 | Azure Speech-to-Text | 변환된 텍스트 |
 | **📝 청킹** | 긴 텍스트 → 작은 단위 | Text Chunking | 처리 가능한 청크 |
 | **🔍 인덱싱** | 텍스트 → 검색 인덱스 | Azure Cognitive Search | 검색 가능한 인덱스 |
@@ -550,7 +554,7 @@ python app.py
 ls static/
 
 # 2. 브라우저에서 접속
-# http://127.0.0.1:5500
+# http://YOUR-SERVER
 
 # 3. 개발자 도구 확인
 # F12로 콘솔 확인
@@ -724,18 +728,9 @@ az cognitiveservices account keys regenerate --name [서비스명] --resource-gr
 
 </details>
 
-### 📞 지원 요청
-
-문제가 지속되면 다음 정보와 함께 이슈를 등록해주세요:
-
-- **오류 메시지**: 전체 오류 로그
-- **환경 정보**: OS, Python 버전, 브라우저
-- **재현 단계**: 문제 발생 과정
-- **예상 동작**: 정상적인 동작
-
 --- 
 
----
+--- 
 
 ## 🎯 기대 효과
 
@@ -827,43 +822,6 @@ def monitor_bias():
 
 </details>
 
---- 
-
----
-
-## 📞 지원
-
-### 🐛 이슈 리포트
-
-| 유형 | 응답 시간 | 채널 |
-|------|-----------|------|
-| **버그 리포트** | 24시간 | GitHub Issues |
-| **기능 요청** | 48시간 | GitHub Discussions |
-| **보안 취약점** | 12시간 | Security Email |
-| **일반 문의** | 72시간 | Contact Form |
-
-### 📚 문서
-
-| 문서 | 설명 | 링크 |
-|------|------|------|
-| **사용자 가이드** | 기본 사용법 | [📖 가이드](link) |
-| **API 문서** | 개발자 참고서 | [📊 API](link) |
-| **FAQ** | 자주 묻는 질문 | [❓ FAQ](link) |
-| **업데이트 노트** | 버전별 변경사항 | [📝 릴리즈](link) |
-
-### 🌐 커뮤니티
-
-| 플랫폼 | 목적 | 링크 |
-|--------|------|------|
-| **Discord** | 실시간 소통 | [🎮 Discord](link) |
-| **GitHub Discussions** | 토론 및 아이디어 | [💬 Discussions](link) |
-| **YouTube** | 튜토리얼 영상 | [📺 YouTube](link) |
-| **Blog** | 기술 블로그 | [👨‍💻 Blog](link) |
-
---- 
-
----
-
 ## 📄 라이선스
 
 <div align="center">
@@ -882,31 +840,6 @@ def monitor_bias():
 | **📝 저작권 표시** | 원본 저작권 표시 필수 |
 | **🛡️ 면책 조항** | 사용에 따른 책임은 사용자에게 |
 
-### 📜 MIT 라이선스 전문
-
-```
-MIT License
-
-Copyright (c) 2025 10팀: 10선비
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 --- 
 
@@ -980,7 +913,8 @@ SOFTWARE.
 
 ### 📹 기능 소개 영상
 
-[![과학쌤 데모](https://img.shields.io/badge/📹-기능_소개_영상-blue?style=for-the-badge&logo=youtube)](미디어1.mp4)
+[![lectur Demo](https://img.youtube.com/vi/VVkd1Tf8oAI/0.jpg)](https://youtu.be/VVkd1Tf8oAI)
+
 
 **주요 기능 시연**
 - AI 챗봇과의 대화
@@ -990,7 +924,7 @@ SOFTWARE.
 
 ### 🎤 최종 발표 영상
 
-[![과학쌤 최종 발표](https://img.shields.io/badge/🎤-최종_발표_영상-green?style=for-the-badge&logo=youtube)](최종.mp4)
+[![lectur Demo](https://img.youtube.com/vi/3d1YKTy72uoI/0.jpg)](https://youtu.be/3d1YKTy72uo)
 
 **프로젝트 완성도**
 - 전체 시스템 동작
@@ -1004,35 +938,9 @@ SOFTWARE.
 
 --- 
 
----
-
-## 🏆 푸터
-
 <div align="center">
-
-### 👥 팀 정보
-
-| 역할 | 이름 | 담당 분야 |
-|------|------|-----------|
-| **팀장** | 홍길동 | 프로젝트 관리 |
-| **개발자** | 김철수 | Backend 개발 |
-| **디자이너** | 이영희 | UI/UX 디자인 |
-| **기획자** | 박민수 | 기획 및 분석 |
-
-### 🌐 소셜 링크
-
-[![GitHub](https://img.shields.io/badge/GitHub-10선비-black?style=for-the-badge&logo=github)](https://github.com/10선비)
-[![YouTube](https://img.shields.io/badge/YouTube-과학쌤-red?style=for-the-badge&logo=youtube)](https://youtube.com/과학쌤)
-[![Discord](https://img.shields.io/badge/Discord-커뮤니티-blue?style=for-the-badge&logo=discord)](https://discord.gg/과학쌤)
-
-### 📞 연락처
-
-| 연락 방법 | 정보 |
-|-----------|------|
-| **이메일** | science.teacher@example.com |
-| **전화** | 02-1234-5678 |
-| **주소** | 서울특별시 강남구 테헤란로 123 |
-
+### 🏆 **프로젝트 정보**
+    
 ---
 
 > **"지식은 한계가 있지만, 상상력은 전 세계를 감싼다."** – 아인슈타인
